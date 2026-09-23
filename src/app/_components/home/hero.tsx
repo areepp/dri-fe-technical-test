@@ -18,7 +18,7 @@ const heroCopyVariants: Variants = {
     transition: {
       duration: 0.7,
       ease: "easeOut",
-      delayChildren: 1.55,
+      delayChildren: 1.15,
       staggerChildren: 0.12,
     },
   },
@@ -38,7 +38,7 @@ const mobileImageVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: 2.45, ease: "easeOut" },
+    transition: { duration: 0.6, delay: 2.05, ease: "easeOut" },
   },
 };
 
@@ -57,7 +57,7 @@ const pillRevealVariants: Variants = {
   hidden: { clipPath: "inset(0% 0% 0% 100%)" },
   visible: {
     clipPath: "inset(0% 0% 0% 0%)",
-    transition: { duration: 0.9, ease: "easeOut" },
+    transition: { duration: 0.65, ease: "easeOut" },
   },
 };
 
@@ -65,7 +65,7 @@ const imageRevealVariants: Variants = {
   hidden: { clipPath: "inset(100% 0 0 0)" },
   visible: {
     clipPath: "inset(0% 0 0 0)",
-    transition: { duration: 0.9, delay: 0.65, ease: "easeOut" },
+    transition: { duration: 0.7, delay: 0.45, ease: "easeOut" },
   },
 };
 
@@ -75,7 +75,7 @@ const firstStatCardRevealVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.55, delay: 1.9, ease: "easeOut" },
+    transition: { duration: 0.55, delay: 1.45, ease: "easeOut" },
   },
 };
 
@@ -85,7 +85,7 @@ const secondStatCardRevealVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.55, delay: 2.05, ease: "easeOut" },
+    transition: { duration: 0.55, delay: 1.6, ease: "easeOut" },
   },
 };
 
@@ -95,7 +95,7 @@ const mobileFirstStatCardRevealVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.55, delay: 2.85, ease: "easeOut" },
+    transition: { duration: 0.55, delay: 2.4, ease: "easeOut" },
   },
 };
 
@@ -105,7 +105,7 @@ const mobileSecondStatCardRevealVariants: Variants = {
     opacity: 1,
     y: 0,
     scale: 1,
-    transition: { duration: 0.55, delay: 3, ease: "easeOut" },
+    transition: { duration: 0.55, delay: 2.55, ease: "easeOut" },
   },
 };
 
@@ -198,7 +198,7 @@ function StatCard({
 
 function DesktopComposition({ image }: { image: StaticImageData }) {
   const shouldReduceMotion = useReducedMotion() ?? false;
-  const countDelay = shouldReduceMotion ? 0 : 1.9;
+  const countDelay = shouldReduceMotion ? 0 : 1.45;
 
   return (
     <motion.div
@@ -243,7 +243,7 @@ function DesktopComposition({ image }: { image: StaticImageData }) {
         value={1451}
         separator=","
         reveal="second"
-        countDelay={shouldReduceMotion ? 0 : 2.05}
+        countDelay={shouldReduceMotion ? 0 : 1.6}
         className="top-[656px] left-[57px]"
       />
     </motion.div>
@@ -279,7 +279,7 @@ function MobileComposition({ image }: { image: StaticImageData }) {
         value={29}
         suffix="k"
         reveal="first"
-        countDelay={shouldReduceMotion ? 0 : 2.85}
+        countDelay={shouldReduceMotion ? 0 : 2.4}
         className="top-[55px] right-[4px]"
       />
       <StatCard
@@ -288,7 +288,7 @@ function MobileComposition({ image }: { image: StaticImageData }) {
         value={1451}
         separator=","
         reveal="second"
-        countDelay={shouldReduceMotion ? 0 : 3}
+        countDelay={shouldReduceMotion ? 0 : 2.55}
         className="top-[220px] left-0"
       />
     </motion.div>

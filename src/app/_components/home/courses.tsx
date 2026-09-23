@@ -32,7 +32,7 @@ const courseContainerVariants: Variants = {
     transition: {
       staggerChildren: 0.12,
       delayChildren:
-        typeof window !== "undefined" && window.scrollY === 0 ? 2.55 : 0.2,
+        typeof window !== "undefined" && window.scrollY === 0 ? 2.1 : 0.2,
     },
   }),
 };
