@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { ReactLenis } from "lenis/react";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -20,7 +22,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${jakarta.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <ReactLenis root options={{ lerp: 0.1, smoothWheel: true }} />
+        {children}
+      </body>
     </html>
   );
 }

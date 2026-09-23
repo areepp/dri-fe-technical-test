@@ -5,7 +5,7 @@ import CountUp, { type CountUpProps } from "react-countup";
 
 type AnimatedCountProps = Pick<
   CountUpProps,
-  "className" | "end" | "separator" | "suffix"
+  "className" | "end" | "separator" | "suffix" | "delay"
 >;
 
 function formatInitialValue(end: number, separator = ",", suffix = "") {
@@ -17,6 +17,7 @@ export function AnimatedCount({
   end,
   separator,
   suffix,
+  delay,
 }: AnimatedCountProps) {
   const isMounted = useSyncExternalStore(
     () => () => {},
@@ -37,6 +38,7 @@ export function AnimatedCount({
           separator={separator}
           start={0}
           suffix={suffix}
+          delay={delay}
         />
       ) : (
         initialValue
