@@ -115,7 +115,7 @@ export function Courses() {
             <motion.article
               key={course.title}
               variants={courseRevealVariants}
-              className="relative rounded-2xl bg-white pb-8 pt-12 shadow-[0_25px_50px_0_rgba(19,24,63,0.1)]"
+              className="relative flex h-full flex-col rounded-2xl bg-white pb-8 pt-12 shadow-[0_25px_50px_0_rgba(19,24,63,0.1)]"
             >
               <Image
                 src={course.icon}
@@ -124,7 +124,7 @@ export function Courses() {
                 height={56}
                 className="absolute -top-7 left-8"
               />
-              <div className="px-8">
+              <div className="flex flex-1 flex-col px-8">
                 <h3 className="text-2xl font-extrabold leading-[28px] text-navy">
                   {course.title}
                 </h3>
@@ -133,7 +133,7 @@ export function Courses() {
                 </p>
                 <a
                   href="#courses"
-                  className="mt-6 inline-block text-base font-bold text-pink transition-colors hover:text-light-pink"
+                  className="mt-auto inline-block pt-6 text-base font-bold text-pink transition-colors hover:text-light-pink"
                 >
                   Get Started
                 </a>
